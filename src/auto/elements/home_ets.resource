@@ -1,3 +1,3 @@
-***  Variables  ***
-&{HOME}
-...     BOTAO_SIGNIN=//a
+*** Variables ***
+&{HOME}     
+...      BOTAO_SIGNIN=//a[@class='login']

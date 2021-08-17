@@ -1,8 +1,8 @@
-***  Settings   ***
-Documentation   Configurações de inicialização e finalização dos testes.
+*** Settings ***
+Documentation    Configurações de inicialização e finalização dos testes.
 
-***  Keywords   *** 
-Abrir sessão 
+*** Keywords ***
+Abrir sessão
     # Abrir o navegador.
     Open Browser    http://automationpractice.com/index.php       chrome
     Set Selenium Timeout    60
