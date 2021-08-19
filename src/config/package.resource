@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Dependências do projeto
 
-#Dependencias
+# Dependencias
 Library        SeleniumLibrary
 
 # Keywords
@@ -11,11 +11,14 @@ Resource       ../auto/keywords/login_kws.robot
 Resource       ../auto/keywords/minha_conta_kws.robot 
 Resource       ../auto/keywords/comum_kws.robot
 
-#Elementos
+# Elementos
 Resource      ../auto/elements/home_ets.resource
 Resource      ../auto/elements/login_ets.resource
 Resource      ../auto/elements/minha_conta_ets.resource
 
-#Dados
+# Dados
 Variables       ../auto/data/dados.yaml   
 Variables       ../auto/data/mensagens.yaml
+
+# Configuração
+Variables       setup.yaml  
