@@ -1,145 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210819 19:57:41.332" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210820 11:29:53.656" rpa="false" schemaversion="2">
 <suite id="s1" name="Features" source="C:\Users\omattos\sistreinamento\WebAutomationRobotFramework\test\features">
-<suite id="s1-s1" name="Login" source="C:\Users\omattos\sistreinamento\WebAutomationRobotFramework\test\features\login.robot">
-<test id="s1-s1-t1" name="Cenario: Login com credenciais inválidas">
+<suite id="s1-s1" name="Cadastro" source="C:\Users\omattos\sistreinamento\WebAutomationRobotFramework\test\features\cadastro.robot">
+<test id="s1-s1-t1" name="Cenario: Validar cadastro com sucesso">
 <kw name="Abrir sessão" library="setup" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${CONFIG.URL}</arg>
 <arg>${CONFIG.NAVEGADOR}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210819 19:57:42.345" level="INFO">Opening browser 'headlesschrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20210819 19:57:42.339" endtime="20210819 19:57:56.066"/>
+<msg timestamp="20210820 11:29:54.450" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210820 11:29:54.447" endtime="20210820 11:30:15.096"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${CONFIG.TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210819 19:57:56.067" endtime="20210819 19:57:56.088"/>
+<status status="PASS" starttime="20210820 11:30:15.097" endtime="20210820 11:30:15.100"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210819 19:57:56.089" endtime="20210819 19:57:56.360"/>
+<status status="PASS" starttime="20210820 11:30:15.101" endtime="20210820 11:30:15.373"/>
 </kw>
-<status status="PASS" starttime="20210819 19:57:42.323" endtime="20210819 19:57:56.361"/>
+<status status="PASS" starttime="20210820 11:29:54.446" endtime="20210820 11:30:15.374"/>
 </kw>
 <kw name="Dado que o cliente esteja na tela inicial da aplicação" library="home_kws">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${HOME.BOTAO_SIGNIN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210819 19:57:56.364" endtime="20210819 19:57:56.475"/>
+<status status="PASS" starttime="20210820 11:30:15.387" endtime="20210820 11:30:15.520"/>
 </kw>
-<status status="PASS" starttime="20210819 19:57:56.362" endtime="20210819 19:57:56.476"/>
+<status status="PASS" starttime="20210820 11:30:15.385" endtime="20210820 11:30:15.521"/>
 </kw>
+<kw name="E acessar a tela de cadastro" library="cadastro_kws">
 <kw name="E acessar a tela de login" library="home_kws">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${HOME.BOTAO_SIGNIN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210819 19:57:56.479" endtime="20210819 19:57:56.554"/>
+<status status="PASS" starttime="20210820 11:30:15.525" endtime="20210820 11:30:15.619"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${HOME.BOTAO_SIGNIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210819 19:57:56.557" level="INFO">Clicking element '//a[@class='login']'.</msg>
-<status status="PASS" starttime="20210819 19:57:56.554" endtime="20210819 19:57:58.992"/>
+<msg timestamp="20210820 11:30:15.623" level="INFO">Clicking element '//a[@class='login']'.</msg>
+<status status="PASS" starttime="20210820 11:30:15.620" endtime="20210820 11:30:17.816"/>
 </kw>
-<status status="PASS" starttime="20210819 19:57:56.477" endtime="20210819 19:57:58.993"/>
+<status status="PASS" starttime="20210820 11:30:15.523" endtime="20210820 11:30:17.816"/>
 </kw>
-<kw name="Quando inserir os dados de login" library="login_kws">
-<arg>${MASSA_DADOS.LOGIN_INVALIDO.EMAIL}</arg>
-<arg>${MASSA_DADOS.LOGIN_INVALIDO.SENHA}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${LOGIN.INPUT_EMAIL}</arg>
+<arg>${LOGIN.INPUT_EMAIL_CADASTRO}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210819 19:57:58.999" endtime="20210819 19:57:59.072"/>
+<status status="PASS" starttime="20210820 11:30:17.817" endtime="20210820 11:30:17.914"/>
+</kw>
+<kw name="FakerLibrary.Email">
+<var>${NOVO_EMAIL}</var>
+<msg timestamp="20210820 11:30:17.929" level="FAIL">No keyword with name 'FakerLibrary.Email' found.</msg>
+<status status="FAIL" starttime="20210820 11:30:17.928" endtime="20210820 11:30:17.929"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${LOGIN.INPUT_EMAIL}</arg>
-<arg>${EMAIL}</arg>
+<arg>${LOGIN.INPUT_EMAIL_CADASTRO}</arg>
+<arg>${NOVO_EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210819 19:57:59.077" level="INFO">Typing text 'rasafa9934@ovooovo.com' into text field '//input[@id='email']'.</msg>
-<status status="PASS" starttime="20210819 19:57:59.074" endtime="20210819 19:57:59.418"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${LOGIN.INPUT_SENHA}</arg>
-<arg>${SENHA}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210819 19:57:59.423" level="INFO">Typing text 'Aeste@123' into text field '//input[@id='passwd']'.</msg>
-<status status="PASS" starttime="20210819 19:57:59.419" endtime="20210819 19:57:59.764"/>
-</kw>
-<status status="PASS" starttime="20210819 19:57:58.994" endtime="20210819 19:57:59.765"/>
-</kw>
-<kw name="E clicar no elemento" library="comum_kws">
-<arg>${LOGIN.BOTAO_SIGNIN}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENTO}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210819 19:57:59.781" endtime="20210819 19:57:59.890"/>
+<status status="NOT RUN" starttime="20210820 11:30:17.929" endtime="20210820 11:30:17.930"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENTO}</arg>
+<arg>${LOGIN.BOTAO_CREATE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210819 19:57:59.892" level="INFO">Clicking element 'SubmitLogin'.</msg>
-<status status="PASS" starttime="20210819 19:57:59.890" endtime="20210819 19:58:01.588"/>
+<status status="NOT RUN" starttime="20210820 11:30:17.930" endtime="20210820 11:30:17.930"/>
 </kw>
-<status status="PASS" starttime="20210819 19:57:59.778" endtime="20210819 19:58:01.589"/>
-</kw>
-<kw name="Então deve visualizar a mensagem" library="comum_kws">
-<arg>${LOGIN.TEXTO_ERRO}</arg>
-<arg>${MENSAGENS.LOGIN.AUTHENTICATION_FAILED}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENTO}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210819 19:58:01.601" endtime="20210819 19:58:01.681"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${MENSAGEM_ATUAL}</var>
-<arg>${ELEMENTO}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20210819 19:58:01.746" level="INFO">${MENSAGEM_ATUAL} = Authentication failed.</msg>
-<status status="PASS" starttime="20210819 19:58:01.682" endtime="20210819 19:58:01.747"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${MENSAGEM_ATUAL}</arg>
-<arg>${MENSAGEM_ESPERADA}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20210819 19:58:01.747" endtime="20210819 19:58:01.748"/>
-</kw>
-<status status="PASS" starttime="20210819 19:58:01.595" endtime="20210819 19:58:01.749"/>
+<status status="FAIL" starttime="20210820 11:30:15.522" endtime="20210820 11:30:17.931"/>
 </kw>
 <kw name="Encerrar sessão" library="setup" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210819 19:58:01.927" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210819 19:58:01.752" endtime="20210819 19:58:01.927"/>
+<msg timestamp="20210820 11:30:18.433" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210820 11:30:17.936" endtime="20210820 11:30:18.433"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210819 19:58:01.927" endtime="20210819 19:58:04.214"/>
+<status status="PASS" starttime="20210820 11:30:18.433" endtime="20210820 11:30:21.557"/>
 </kw>
-<status status="PASS" starttime="20210819 19:58:01.750" endtime="20210819 19:58:04.215"/>
+<status status="PASS" starttime="20210820 11:30:17.935" endtime="20210820 11:30:21.557"/>
 </kw>
-<tag>LOGIN</tag>
-<tag>NEGATIVO</tag>
-<status status="PASS" starttime="20210819 19:57:42.320" endtime="20210819 19:58:04.244"/>
+<tag>CADASTRO</tag>
+<tag>POSITIVO</tag>
+<status status="FAIL" starttime="20210820 11:29:54.445" endtime="20210820 11:30:21.557">No keyword with name 'FakerLibrary.Email' found.</status>
 </test>
-<doc>Cenários de testes relacionado ao login da aplicação.</doc>
-<status status="PASS" starttime="20210819 19:57:41.440" endtime="20210819 19:58:04.263"/>
+<doc>Cenários de testes relacionado ao cadastro</doc>
+<status status="FAIL" starttime="20210820 11:29:53.762" endtime="20210820 11:30:21.563"/>
 </suite>
-<status status="PASS" starttime="20210819 19:57:41.338" endtime="20210819 19:58:04.318"/>
+<status status="FAIL" starttime="20210820 11:29:53.658" endtime="20210820 11:30:21.570"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">LOGIN</stat>
-<stat pass="1" fail="0" skip="0">NEGATIVO</stat>
+<stat pass="0" fail="1" skip="0">CADASTRO</stat>
+<stat pass="0" fail="1" skip="0">POSITIVO</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Features">Features</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login">Features.Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Features">Features</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Cadastro">Features.Cadastro</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20210820 11:29:54.358" level="ERROR">Error in file 'C:\Users\omattos\sistreinamento\WebAutomationRobotFramework\src\config\package.resource' on line 6: Importing library 'FakerLibrary' failed: ModuleNotFoundError: No module named 'FakerLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\omattos\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  c:\users\omattos\appdata\local\programs\python\python39\python39.zip
+  c:\users\omattos\appdata\local\programs\python\python39\DLLs
+  c:\users\omattos\appdata\local\programs\python\python39\lib
+  c:\users\omattos\appdata\local\programs\python\python39
+  c:\users\omattos\appdata\local\programs\python\python39\lib\site-packages</msg>
 </errors>
 </robot>
